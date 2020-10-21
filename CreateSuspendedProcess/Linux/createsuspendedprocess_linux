@@ -1,0 +1,7 @@
+#! /bin/bash
+if [ $# -ne 1 ]; then
+	echo "This script requires only 1 argument: <name_of_executable_to_run>"
+	exit 1
+fi
+echo "/root/createsuspendedprocess_gdb --quiet --batch --command=/root/createsuspendedprocess_starti.gdb $1"
+/root/createsuspendedprocess_gdb --quiet --batch --command=/root/createsuspendedprocess_starti.gdb $1
