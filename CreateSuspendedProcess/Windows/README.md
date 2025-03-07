@@ -10,7 +10,7 @@ I created a Windows executable called CreateSuspendedProcess.exe which does just
 c:\>CreateSuspendedProcess.exe <your_malware_filename_here>
 ```
 
-The genesis of this is that a customer wanted to be able to perform a system scan using CrowdStrike but as we do not have that feature this would allow them to write a script to recursively iterate over a system's directories and allow our ML to analyze executables, thus performing a pseudo system scan in a safe manner.  This is also very useful to perform lab testing of malware safely so that you don't have to worry about the malware actually executing if it is missed by our ML but can still see a detection/prevention.
+The genesis of this is that a customer wanted to be able to perform a system scan using CrowdStrike but as we do not have that feature at that time this would allow them to write a script to recursively iterate over a system's directories and allow our ML to analyze executables, thus performing a pseudo system scan in a safe manner.  This is also very useful to perform lab testing of malware safely so that you don't have to worry about the malware actually executing if it is missed by our ML but can still see a detection/prevention.
 
 The behavior of CreateSuspendedProcess is as follows:
 
