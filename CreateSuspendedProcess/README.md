@@ -136,10 +136,6 @@ Creating a process in a suspended state starts a process normally but stops befo
 
 Being able to start a process in a suspended state is useful for many reasons but for our purpose we want to leverage that ability for malware testing.  If we can start a process in a suspended state, it will go through all the regular operating system mechanisms to create a process and in turn give any endpoint security solutions the opportunity to examine the process the OS is creating and determine whether or not it should be allowed to start.  For example, next gen machine learning engines can analyze the process attempting to be started and evaluate whether or not it is malicious.  If it is malicious, then it can tell the OS not to start the process.  If it is determined to be benign, then it can tell the OS to start the process.  However, in the latter case, the OS will just start the process in a suspended state.  So if we want to safely test malware, we can use this option and rest assured that if any AV/NGAV/ML solution "misses" the malware, it'll just be sitting in a suspended state and can be killed without doing any damage to the system.
 
-### System Scans
-
-Since CrowdStrike currently does *not* offer any system file scanning capability, we can use these tools to script scans of folders and files letting machine learning analyze each file as its attempted to be started in a suspended state.  Examples to follow in each subfolder for the different operating systems.
-
 ## CreateSuspendedProcess Tools
 
 In this project I have built utilities to be able to start a process in a suspended state.  There's both an executable for Windows and a PowerShell script option.  For MacOS there's an executable option.  For Linux, there's no API to be able to start a process suspended but we can leverage the GNU GDB debugger to start a process and stop before its first instruction executes.
